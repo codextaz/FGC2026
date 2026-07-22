@@ -1,7 +1,12 @@
 /**
- * db.js — JSON file database using lowdb (pure JS, no native compilation needed).
- * Data is persisted to server/evo_fgc.json on every write.
+ * db.js — Hybrid Database Layer
+ *
+ * Local Dev: Uses lowdb (persists to server/evo_fgc.json).
+ * Vercel / Cloud: Detects Upstash Redis / Vercel KV environment variables
+ * (KV_REST_API_URL / UPSTASH_REDIS_REST_URL) to persist player registrations
+ * and brackets permanently in the cloud.
  */
+import { Redis } from '@upstash/redis';
 import { JSONFilePreset } from 'lowdb/node';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -40,18 +45,53 @@ const SEED_BRACKETS = {
   ],
 };
 
-// Default schema — used only on first run when the file doesn't exist
-const defaultData = {
+const DEFAULT_DATA = {
   players: [],
   brackets: SEED_BRACKETS,
 };
 
-// Singleton DB instance (resolved once at startup)
-let _db = null;
+let _dbInstance = null;
 
 export async function getDb() {
-  if (_db) return _db;
-  _db = await JSONFilePreset(DB_PATH, defaultData);
-  console.log(`[db] Connected to ${DB_PATH}`);
-  return _db;
+  if (_dbInstance) return _dbInstance;
+
+  // Check for Upstash Redis / Vercel KV Environment Variables
+  const redisUrl = process.env.UPSTASH_REDIS_REST_URL || process.env.KV_REST_API_URL;
+  const redisToken = process.env.UPSTASH_REDIS_REST_TOKEN || process.env.KV_REST_API_TOKEN;
+
+  if (redisUrl && redisToken) {
+    console.log('[db] Using Cloud Persistence (Upstash Redis / Vercel KV)');
+    const redis = new Redis({ url: redisUrl, token: redisToken });
+
+    // Fetch existing cloud data
+    let players = await redis.get('evo_players');
+    let brackets = await redis.get('evo_brackets');
+
+    if (!players) {
+      players = DEFAULT_DATA.players;
+      await redis.set('evo_players', players);
+    }
+    if (!brackets) {
+      brackets = DEFAULT_DATA.brackets;
+      await redis.set('evo_brackets', brackets);
+    }
+
+    _dbInstance = {
+      data: { players, brackets },
+      write: async function () {
+        await Promise.all([
+          redis.set('evo_players', this.data.players),
+          redis.set('evo_brackets', this.data.brackets),
+        ]);
+      },
+    };
+
+    return _dbInstance;
+  }
+
+  // Fallback: Local Lowdb JSON File
+  const lowdb = await JSONFilePreset(DB_PATH, DEFAULT_DATA);
+  console.log(`[db] Using Local Persistence (${DB_PATH})`);
+  _dbInstance = lowdb;
+  return _dbInstance;
 }
