@@ -105,7 +105,7 @@ export default function AdminDashboard({ players, onUpdatePlayers, adminMode, on
             <form onSubmit={handleLogin}>
               <input 
                 type="password"
-                placeholder="Enter Admin Password (admin2026)"
+                placeholder="Enter Organizer Password"
                 value={passwordInput}
                 onChange={e => setPasswordInput(e.target.value)}
                 style={{

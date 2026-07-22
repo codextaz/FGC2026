@@ -13,7 +13,7 @@ const VALID_TOKENS = new Set();
 // ─── POST /api/admin/login ────────────────────────────────────────────────────
 router.post('/login', (req, res) => {
   const { password } = req.body;
-  const adminPassword = process.env.ADMIN_PASSWORD || 'admin2026';
+  const adminPassword = process.env.ADMIN_PASSWORD || 't8sm8yka';
 
   if (password !== adminPassword) {
     return res.status(401).json({ error: 'Invalid admin password.' });
