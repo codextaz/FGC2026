@@ -1,0 +1,200 @@
+{
+  "players": [],
+  "brackets": {
+    "dbz": [
+      {
+        "matchId": 1,
+        "round": "Quarter-Finals",
+        "player1": "TBD",
+        "player2": "TBD",
+        "score1": 0,
+        "score2": 0,
+        "winner": null
+      },
+      {
+        "matchId": 2,
+        "round": "Quarter-Finals",
+        "player1": "TBD",
+        "player2": "TBD",
+        "score1": 0,
+        "score2": 0,
+        "winner": null
+      },
+      {
+        "matchId": 3,
+        "round": "Quarter-Finals",
+        "player1": "TBD",
+        "player2": "TBD",
+        "score1": 0,
+        "score2": 0,
+        "winner": null
+      },
+      {
+        "matchId": 4,
+        "round": "Quarter-Finals",
+        "player1": "TBD",
+        "player2": "TBD",
+        "score1": 2,
+        "score2": 0,
+        "winner": "PiccoloGod"
+      },
+      {
+        "matchId": 5,
+        "round": "Semi-Finals",
+        "player1": "TBD",
+        "player2": "TBD",
+        "score1": 0,
+        "score2": 0,
+        "winner": null
+      },
+      {
+        "matchId": 6,
+        "round": "Semi-Finals",
+        "player1": "TBD",
+        "player2": "TBD",
+        "score1": 0,
+        "score2": 0,
+        "winner": null
+      },
+      {
+        "matchId": 7,
+        "round": "Grand Final",
+        "player1": "TBD",
+        "player2": "TBD",
+        "score1": 0,
+        "score2": 0,
+        "winner": null
+      }
+    ],
+    "guilty-gear": [
+      {
+        "matchId": 1,
+        "round": "Quarter-Finals",
+        "player1": "SolBadguy_ZW",
+        "player2": "KyKiske",
+        "score1": 0,
+        "score2": 0,
+        "winner": null
+      },
+      {
+        "matchId": 2,
+        "round": "Quarter-Finals",
+        "player1": "MayAnchor",
+        "player2": "Nagoriyuki",
+        "score1": 0,
+        "score2": 0,
+        "winner": null
+      },
+      {
+        "matchId": 3,
+        "round": "Quarter-Finals",
+        "player1": "Ramlethal",
+        "player2": "HappyChaos",
+        "score1": 0,
+        "score2": 0,
+        "winner": null
+      },
+      {
+        "matchId": 4,
+        "round": "Quarter-Finals",
+        "player1": "PotemkinBuster",
+        "player2": "BYE",
+        "score1": 2,
+        "score2": 0,
+        "winner": "PotemkinBuster"
+      },
+      {
+        "matchId": 5,
+        "round": "Semi-Finals",
+        "player1": "TBD",
+        "player2": "TBD",
+        "score1": 0,
+        "score2": 0,
+        "winner": null
+      },
+      {
+        "matchId": 6,
+        "round": "Semi-Finals",
+        "player1": "PotemkinBuster",
+        "player2": "TBD",
+        "score1": 0,
+        "score2": 0,
+        "winner": null
+      },
+      {
+        "matchId": 7,
+        "round": "Grand Final",
+        "player1": "TBD",
+        "player2": "TBD",
+        "score1": 0,
+        "score2": 0,
+        "winner": null
+      }
+    ],
+    "tekken7": [
+      {
+        "matchId": 1,
+        "round": "Quarter-Finals",
+        "player1": "KazuyaKing",
+        "player2": "MishimaPower",
+        "score1": 0,
+        "score2": 0,
+        "winner": null
+      },
+      {
+        "matchId": 2,
+        "round": "Quarter-Finals",
+        "player1": "BryanFury_ZW",
+        "player2": "PaulPhoenix",
+        "score1": 0,
+        "score2": 0,
+        "winner": null
+      },
+      {
+        "matchId": 3,
+        "round": "Quarter-Finals",
+        "player1": "JinKazama",
+        "player2": "HwoarangRider",
+        "score1": 0,
+        "score2": 0,
+        "winner": null
+      },
+      {
+        "matchId": 4,
+        "round": "Quarter-Finals",
+        "player1": "KingGrappler",
+        "player2": "BYE",
+        "score1": 2,
+        "score2": 0,
+        "winner": "KingGrappler"
+      },
+      {
+        "matchId": 5,
+        "round": "Semi-Finals",
+        "player1": "TBD",
+        "player2": "TBD",
+        "score1": 0,
+        "score2": 0,
+        "winner": null
+      },
+      {
+        "matchId": 6,
+        "round": "Semi-Finals",
+        "player1": "KingGrappler",
+        "player2": "TBD",
+        "score1": 0,
+        "score2": 0,
+        "winner": null
+      },
+      {
+        "matchId": 7,
+        "round": "Grand Final",
+        "player1": "TBD",
+        "player2": "TBD",
+        "score1": 0,
+        "score2": 0,
+        "winner": null
+      }
+    ]
+  }
+}
